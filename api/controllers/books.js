@@ -3,7 +3,7 @@ const sqlite3 = require("sqlite3").verbose();
 
 const db = new sqlite3.Database("books.db");
 
-// Create books table if not exists
+//Crea la tabla de usuarios
 db.run(
   "CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT, ape TEXT, nits TEXT, tel TEXT, dire TEXT, user TEXT, pass TEXT, role TEXT, state TEXT)"
 );

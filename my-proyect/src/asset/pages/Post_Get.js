@@ -131,7 +131,7 @@ function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
     
    if(form && form.id){
     console.log("Estoy dentro de la condicion if si existe id")
-    axios.put(`http://localhost:4200/Books/${form.id}`, {
+    axios.put(`https://api-analisis.onrender.com/Books/${form.id}`, {
       nom: formBook.nombre,
       ape: formBook.apellido,
       nits: formBook.nit,
@@ -170,7 +170,7 @@ function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
     }
 
     axios
-      .post("http://localhost:4200/Books", {
+      .post("https://api-analisis.onrender.com/Books", {
         nom: formBook.nombre,
         ape: formBook.apellido,
         nits: formBook.nit,
@@ -197,7 +197,7 @@ function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
 }
 
 //Metodo Get 
-  const url = "http://localhost:4200/Books";  
+  const url = "https://api-analisis.onrender.com/Books";  
   const [books, setBooks ] = useState(null);
 
   useEffect(() => {
@@ -237,7 +237,7 @@ function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
          
             console.log(`Soy el registro que intentas eliminar de manera exitosa ${id}`,e.target);
           
-            axios.delete(`http://localhost:4200/Books/ ${id}`)
+            axios.delete(`https://api-analisis.onrender.com/Books/ ${id}`)
              .then(response => {
               console.log(`Id ${id} eliminado exitosamente!`);
               setLoad(true);

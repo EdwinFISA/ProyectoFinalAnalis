@@ -166,6 +166,8 @@ function Menu() {
                               <div class="accordion-body">
                                   <Link to="/post_get"> Crear usuario</Link><br></br>
                                   <Link to="/UserTable">Listar usuarios </Link><br></br>
+                                  {/*<Link to="/paginaweb"> Pagina Web</Link><br></br>*/}
+
                                   <a className="colorLabel"  href="#">Buscar Persona    </a><br></br>
                               </div>
                           </div>
