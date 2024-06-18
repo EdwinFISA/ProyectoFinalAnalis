@@ -2,17 +2,18 @@ const express = require("express");
 const session = require("express-session");
 const SQLiteStore = require("connect-sqlite3")(session);
 const routes = require("./routes/routes");
+const {FRONTEND_URL, PORT} = require("./config.js");
 
 //const cors = require("express-cors");
 const cors = require("cors");
 
 const app = express();
-const port = 4200;
+const port = PORT;
 
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "FRONTEND_URL",
     credentials: true,
   })
 );
