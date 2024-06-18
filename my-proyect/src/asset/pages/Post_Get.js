@@ -98,20 +98,20 @@ function BookCreate() {
   };
 //Metodo Post con Validaciones
 
-function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
- setFormBook({
-    id:[id ? id : null],
-    nombre: [nom],
-    apellido: [ape],
-    nit: [nits],
-    telefono: [tel],
-    direccion: [dire],
-    usuario:[user],
-    contrasenia:[pass],
-    rol:[role],
-    estado:[state],
-  })
- }
+const newData = (id, nom, ape, nits, tel, dire, user, pass, role, state) => {
+  setFormBook({
+    id: id,
+    nombre: nom,
+    apellido: ape,
+    nit: nits,
+    telefono: tel,
+    direccion: dire,
+    usuario: user,
+    contrasenia: pass,
+    rol: role,
+    estado: state
+  });
+};
 
  const handleReset =()=>{
   setFormBook({
@@ -423,7 +423,7 @@ function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
 
         </form>
         <br></br>
-        <h1 className='text-center'>Funciona lo de registrar, eliminar y solo editar aun no!</h1> <br></br>
+        <h1 className='text-center'></h1> <br></br>
         <br></br>  <h4>Table</h4>   <hr></hr>
         <div className="container">
           <div class="table-responsive small">    
@@ -463,12 +463,14 @@ function newData(id, nom, ape, nits, tel, dire, user, pass, role, state, e){
                     <td>
                       {<button onClick={(e)=>handleDelete(item.id, e)} style={{ border: 'none', padding: 0, margin: 0, backgroundColor: 'transparent' }}> <FaTrashAlt  size={18} color="red"/></button> }
                       {/*<button  onClick={(e)=>handleEdit(item.id, e)} style={{ border: 'none', padding: 0, margin: 0, backgroundColor: 'transparent' }}> <FaEdit  size={18} color="blue"/></button>*/}
-                      {<button  onClick={(e)=>newData(item.id, item.nom, item.ape, item.nits, item.tel, item.dire, item.user, item.pass, item.role, item.state)} style={{ border: 'none', padding: 0, margin: 0, backgroundColor: 'transparent' }}> <FaEdit  size={18} color="black"/></button> }
+                      <button onClick={(e) => newData(item.id, item.nom, item.ape, item.nits, item.tel, item.dire, item.user, item.pass, item.role, item.state)} style={{ border: 'none', padding: 0, margin: 0, backgroundColor: 'transparent' }}>
+                     <FaEdit size={18} color="black" />
+                      </button>
                     </td> 
                   </tr>   ))
                 }
             </tbody>
-          </table>
+          </table>k
           </div>
         </div>
     </Fragment>
